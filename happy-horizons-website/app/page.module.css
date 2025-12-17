@@ -120,7 +120,7 @@
   transition: all 0.3s ease;
   border: 2px solid transparent;
   background-color: var(--button-color);
-  color: inherit; /* Ensure text color is visible */
+  color: inherit;
 }
 
 .ctaButton:hover {
@@ -209,11 +209,11 @@
 
 /* Reverse layout for staff section - image on right */
 .staffCard.reverseLayout {
-  direction: rtl; /* This reverses the grid order */
+  direction: rtl;
 }
 
 .staffCard.reverseLayout > * {
-  direction: ltr; /* Reset direction for content inside */
+  direction: ltr;
 }
 
 .staffImage {
@@ -252,62 +252,6 @@
   background-color: var(--sunflower-gold);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(230, 175, 46, 0.3);
-}
-
-/* ===== RESPONSIVE DESIGN FOR STORY & STAFF SECTIONS ===== */
-
-/* Tablet and smaller screens */
-@media (max-width: 900px) {
-  .storySection,
-  .staffSection {
-    padding: 3rem 1rem;
-  }
-  
-  .storyCard,
-  .staffCard {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  .storyContent h2,
-  .staffContent h2 {
-    font-size: 2rem;
-  }
-  
-  .storyImage,
-  .staffImage {
-    order: -1; /* Move image to top on mobile */
-  }
-  
-  /* Reset reverse layout on mobile */
-  .staffCard.reverseLayout {
-    direction: ltr;
-  }
-}
-
-/* Mobile phones */
-@media (max-width: 480px) {
-  .storySection,
-  .staffSection {
-    padding: 2rem 1rem;
-  }
-  
-  .storyCard,
-  .staffCard {
-    padding: 1.5rem;
-  }
-  
-  .storyContent h2,
-  .staffContent h2 {
-    font-size: 1.75rem;
-  }
-  
-  .storyContent p,
-  .staffContent p {
-    font-size: 1rem;
-  }
 }
 
 /* ===== WHAT WE OFFER SECTION ===== */
@@ -386,86 +330,189 @@
   margin: 0;
 }
 
-/* ===== RESPONSIVE DESIGN FOR OFFER SECTION ===== */
+/* ===== RESPONSIVE DESIGN ===== */
 
-/* Tablet and smaller screens */
+/* Tablet and smaller screens (max-width: 900px) */
 @media (max-width: 900px) {
+  /* Hero section */
+  .heroSection {
+    margin: 20px;
+    height: 40vh;
+    background: var(--buttercream);
+  }
+
+  .heroBackground {
+    display: none;
+  }
+
+  .heroLogo {
+    display: block;
+  }
+
+  .companyName {
+    font-size: 2.5rem;
+  }
+
+  .missionStatement {
+    font-size: 1.2rem;
+  }
+
+  .companyHeader {
+    flex-direction: column;
+  }
+
+  /* CTA section */
+  .ctaSection {
+    padding: 3rem 1rem;
+  }
+
+  .ctaCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .ctaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Story & Staff sections */
+  .storySection,
+  .staffSection {
+    padding: 3rem 1rem;
+  }
+
+  .storyCard,
+  .staffCard {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .storyContent h2,
+  .staffContent h2 {
+    font-size: 2rem;
+  }
+
+  .storyImage,
+  .staffImage {
+    order: -1;
+  }
+
+  .staffCard.reverseLayout {
+    direction: ltr;
+  }
+
+  /* Offer section */
   .offerSection {
     padding: 3rem 1rem;
   }
-  
+
   .offerGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-  
+
   .offerHeading {
     font-size: 2rem;
     margin-bottom: 2rem;
   }
-  
+
   .offerCard {
     padding: 1.5rem;
   }
 }
 
-/* Mobile phones */
+/* Mobile phones (max-width: 480px) */
 @media (max-width: 480px) {
+  /* Hero section */
+  .heroSection {
+    margin: 15px;
+    height: 35vh;
+  }
+
+  .companyName {
+    font-size: 2rem;
+  }
+
+  .missionStatement {
+    font-size: 1.1rem;
+  }
+
+  /* CTA section */
+  .ctaSection {
+    padding: 2rem 1rem;
+  }
+
+  .ctaCard {
+    padding: 1.5rem 1rem;
+  }
+
+  /* Story & Staff sections */
+  .storySection,
+  .staffSection {
+    padding: 2rem 1rem;
+  }
+
+  .storyCard,
+  .staffCard {
+    padding: 1.5rem;
+  }
+
+  .storyContent h2,
+  .staffContent h2 {
+    font-size: 1.75rem;
+  }
+
+  .storyContent p,
+  .staffContent p {
+    font-size: 1rem;
+  }
+
+  /* Offer section */
   .offerSection {
     padding: 2rem 1rem;
   }
-  
+
   .offerGrid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .offerHeading {
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .offerCard {
     padding: 1.25rem;
   }
-  
+
   .iconPlaceholder {
     font-size: 2.5rem;
     width: 70px;
     height: 70px;
   }
-  
+
   .offerCard h3 {
     font-size: 1.1rem;
   }
-  
+
   .offerCard p {
     font-size: 0.9rem;
   }
 }
 
-/* ===== ACCESSIBILITY ENHANCEMENTS FOR OFFER SECTION ===== */
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  .offerCard {
-    transition: none;
-  }
-  
-  .offerCard:hover {
-    transform: none;
+/* Desktop (min-width: 901px) */
+@media (min-width: 901px) {
+  .heroLogo {
+    display: none;
   }
 }
 
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  .offerCard {
-    border: 1px solid currentColor;
-  }
-}
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
 
-/* ===== ACCESSIBILITY ENHANCEMENTS FOR STORY & STAFF SECTIONS ===== */
-
+/* Focus styles for keyboard navigation */
+.ctaButton:focus,
 .storyButton:focus,
 .staffButton:focus {
   outline: 2px solid var(--sunflower-gold);
@@ -475,137 +522,40 @@
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
+  .ctaCard,
   .storyCard,
   .staffCard {
     border: 2px solid currentColor;
   }
-  
+
+  .ctaButton,
   .storyButton,
   .staffButton {
     border: 2px solid currentColor;
   }
-}
 
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  .storyCard,
-  .staffCard,
-  .storyButton,
-  .staffButton {
-    transition: none;
-  }
-  
-  .storyButton:hover,
-  .staffButton:hover {
-    transform: none;
-  }
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
-
-/* Tablet and smaller screens */
-@media (max-width: 900px) {
-  /* Hero section adjustments */
-  .heroSection {
-    margin: 20px;
-    height: 40vh;
-    background: var(--buttercream);
-  }
-  
-  .heroBackground {
-    display: none; /* Hide banner on mobile */
-  }
-  
-  .heroLogo {
-    display: block; /* Show logo on mobile */
-  }
-  
-  .companyName {
-    font-size: 2.5rem;
-  }
-  
-  .missionStatement {
-    font-size: 1.2rem;
-  }
-  
-  .companyHeader {
-    flex-direction: column;
-  }
-  
-  /* CTA section adjustments */
-  .ctaSection {
-    padding: 3rem 1rem;
-  }
-  
-  .ctaCard {
-    padding: 2rem 1.5rem;
-  }
-  
-  .ctaGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Mobile phones */
-@media (max-width: 480px) {
-  .heroSection {
-    margin: 15px;
-    height: 35vh;
-  }
-  
-  .companyName {
-    font-size: 2rem;
-  }
-  
-  .missionStatement {
-    font-size: 1.1rem;
-  }
-  
-  .ctaSection {
-    padding: 2rem 1rem;
-  }
-  
-  .ctaCard {
-    padding: 1.5rem 1rem;
-  }
-}
-
-/* Desktop styles (901px and up) */
-@media (min-width: 901px) {
-  .heroLogo {
-    display: none; /* Ensure logo is hidden on desktop */
-  }
-}
-
-/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
-
-/* Focus styles for better keyboard navigation */
-.ctaButton:focus {
-  outline: 2px solid var(--sunflower-gold);
-  outline-offset: 2px;
-  background-color: var(--sunflower-gold);
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  .ctaCard {
-    border: 2px solid currentColor;
-  }
-  
-  .ctaButton {
-    border: 2px solid currentColor;
+  .offerCard {
+    border: 1px solid currentColor;
   }
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .ctaCard,
-  .ctaButton {
+  .ctaButton,
+  .storyCard,
+  .staffCard,
+  .storyButton,
+  .staffButton,
+  .offerCard {
     transition: none;
   }
-  
+
   .ctaCard:hover,
-  .ctaButton:hover {
+  .ctaButton:hover,
+  .storyButton:hover,
+  .staffButton:hover,
+  .offerCard:hover {
     transform: none;
   }
 }
@@ -619,24 +569,24 @@
     height: auto;
     background: white !important;
   }
-  
+
   .heroBackground {
     display: none;
   }
-  
+
   .heroLogo {
     display: block;
   }
-  
+
   .ctaSection {
     padding: 2rem 0;
   }
-  
+
   .ctaCard {
     box-shadow: none;
     border: 1px solid #ccc;
   }
-  
+
   .ctaButton {
     background: white;
     border: 1px solid #ccc;
