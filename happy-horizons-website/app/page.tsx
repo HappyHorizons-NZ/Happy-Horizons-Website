@@ -15,7 +15,6 @@ export default function Home() {
             style={{
               objectFit: "cover",
             }}
-            priority
           />
         </div>
 
